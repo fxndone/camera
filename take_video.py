@@ -3,6 +3,42 @@ from threading import Event, Thread
 from os import get_terminal_size as gts, name, system
 from pickle import dump
 
+toDl = []
+
+try:
+    import numpy as np
+except:
+    toDl.append("numpy")
+try:
+    from cv2 import cv2
+except:
+    toDl.append("opencv-python")
+
+if toDl != []:
+    print("/!\\Need to install modules/!\\")
+    for ele in toDl:
+        print(f"-{ele}")
+    chx = str(input("Install ? (Y/N) : "))
+    while chx.lower() != "y" and chx.lower() != "n":
+        chx = str(input("Install ? (Y/N) : "))
+    if chx.lower() == "n":
+        print("Modules required !!")
+        print("Exiting...")
+        exit()
+    else:
+        for ele in toDl:
+            try:
+                system(executable + f" -m pip install {ele}")
+            except:
+                pass
+        try:
+            from cv2 import cv2
+            import numpy as np
+        except:
+            print("/!\\Chec your pip installer !!/!\\")
+            print("Exiting...")
+            exit()
+
 allImgs = []
 
 def waitForEnter():
@@ -23,24 +59,6 @@ def dp(obj):
     except:
         print("To many videos !")
         dump(obj, open("I Hope it is the last.video", "wb+"))
-
-try:
-    import numpy as np
-except:
-    try:
-        system(executable + " -m pip install numpy")
-    except:
-        pass
-try:
-    from cv2 import cv2
-except:
-    try:
-        system(executable+" -m pip install opencv-python")
-    except:
-        pass
-
-from cv2 import cv2
-import numpy as np
 
 if name == "nt":
     def cls():
