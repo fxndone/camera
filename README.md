@@ -15,3 +15,6 @@ Show video saved
 
 # cam.py
 Print ascii art of webcam output
+
+
+Inspired by micode one (https://github.com/micodeyt/ascii-webcam)
