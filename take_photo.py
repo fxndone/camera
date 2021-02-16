@@ -30,6 +30,13 @@ if toDl != []:
                 system(executable + " -m pip install opencv-python")
             except:
                 pass
+        try:
+            from cv2 import cv2
+            import numpy as np
+        except:
+            print("/!\\Chec your pip installer !!/!\\")
+            print("Exiting...")
+            exit()
     
     
 def save(data):
