@@ -27,7 +27,7 @@ if toDl != []:
     else:
         for ele in toDl:
             try:
-                system(executable + " -m pip install opencv-python")
+                system(executable + f" -m pip install {ele}")
             except:
                 pass
         try:
