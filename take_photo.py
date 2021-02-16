@@ -2,21 +2,36 @@ from sys import executable
 from os import get_terminal_size as gts, name, system
 from pickle import dump
 
+toDl = []
+
 try:
     import numpy as np
 except:
-    try:
-        system(executable + " -m pip install numpy")
-    except:
-        pass
+    toDl.append("numpy")
 try:
     from cv2 import cv2
 except:
-    try:
-        system(executable + " -m pip install opencv-python")
-    except:
-        pass
+    toDl.append("opencv-python")
 
+if toDl != []:
+    print("/!\\Need to install modules/!\\")
+    for ele in toDl:
+        print(f"-{ele}")
+    chx = str(input("Install ? (Y/N) : "))
+    while chx.lower() != "y" and chx.lower() != "n":
+        chx = str(input("Install ? (Y/N) : "))
+    if chx.lower() == "n":
+        print("Modules required !!")
+        print("Exiting...")
+        exit()
+    else:
+        for ele in toDl:
+            try:
+                system(executable + " -m pip install opencv-python")
+            except:
+                pass
+    
+    
 def save(data):
     for i in range(1, 100):
         try:
