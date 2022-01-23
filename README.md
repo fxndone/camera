@@ -1,5 +1,6 @@
 # camera
-Some programes used to share ascii art photos and vidéos
+Some programes used to share ascii art photos and vidéos.
+
 Need to install opencv-python and numpy
 
 # take_photo.py
