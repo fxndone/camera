@@ -1,22 +1,47 @@
-# camera
-Some programes used to share ascii art photos and vidéos.
+# Camera
 
-Need to install opencv-python and numpy
+---
 
-# take_photo.py
-Take a photo and save it (ascii art) as .image
+Camera is a python tool that allows you to take ascii photos, or display a video of you as ascii art.
 
-# take_video.py
-Take a video and save it (ascii art) as .video
+This project have been inspired by micode one (see [here](https://github.com/micodeyt/ascii-webcam))
 
-# read_photo.py
-Show photo saved
+## Installation
 
-# read_video.py
-Show video saved
+---
 
-# cam.py
-Print ascii art of webcam output
+To install this project, simply clone it, and cd into it.
 
+Then, you will need to install requirements :
 
-Inspired by micode one (https://github.com/micodeyt/ascii-webcam)
+    pip install -r requirements.txt
+
+After that, you're done !
+
+Simply run camera.py to have a fullscreen live ascii art video of your head.
+
+### Other files :
+
+---
+
+Four other files are aviables :
+
+#### take_photo.py
+
+This allows you to take a picture of you and save it as <file>.image.
+
+#### read_photo.py
+
+This allows you to see a picture that you've take using take_photo.py (terminal needs to be resized).
+
+#### take_video.py
+
+Take a video from you and save it as a <file>.video.
+
+#### read_video.py
+
+You see it, it read a .video file (and terminal needs to be resized)
+
+---
+
+Hope you enjoyed this little project !
