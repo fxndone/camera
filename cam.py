@@ -8,7 +8,7 @@ try:
 except:
     toDl.append("numpy")
 try:
-    from cv2 import cv2
+    import cv2
 except:
     toDl.append("opencv-python")
 
@@ -63,6 +63,10 @@ def main():
             break
 
 
+def rev(string):
+    return '\n'.join([x[::-1] for x in string.split('\n')])
+
+
 def toASCII(frame, cols=120, rows=35):
     frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     height, width = frame.shape
@@ -79,11 +83,11 @@ def toASCII(frame, cols=120, rows=35):
             )
             result += grayToChar(gray)
         result += '\n'
-    return result
+    return rev(result)
 
 
 def grayToChar(gray):
-    CHAR_LIST = ' .:-=+*#%@'
+    CHAR_LIST = ' .\'`^",:;Il!i><~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$' # ' .:-=+*|#%@'
     num_chars = len(CHAR_LIST)
     return CHAR_LIST[
         min(
